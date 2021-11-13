@@ -11,6 +11,8 @@ def imshow(X, resize=None):
     """
     if not resize:
         resize = X.size
-    resized_array = np.resize(X, resize)
 
-    print(X)
+    image = Image.fromarray(np.uint8(X))
+    image = image.resize(resize)
+    
+    return image
