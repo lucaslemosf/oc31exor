@@ -10,12 +10,12 @@ def imshow(X, resize=None):
     We should be able to install this package in Google Colab from your Git
     repo.
     """
-
-    # In case resize is empty, return the same image
-    if not resize:
-        return X
-
+    # Convert array to image
     image = Image.fromarray(np.uint8(X))
-    image = image.resize(resize)
 
+    # In case resize is not empty, resize
+    if resize:
+        image = image.resize(resize)
+    
     return image
+
