@@ -10,8 +10,10 @@ def imshow(X, resize=None):
     We should be able to install this package in Google Colab from your Git
     repo.
     """
+
+    # In case resize is empty, return the same image
     if not resize:
-        resize = X.shape
+        return X
 
     image = Image.fromarray(np.uint8(X))
     image = image.resize(resize)
