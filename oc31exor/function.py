@@ -2,6 +2,7 @@ import numpy as np
 from ipywidgets import interact, fixed
 from PIL import Image
 
+
 def imshow(X, resize=None):
     """
     You should create a way to resize an image from an array X.
@@ -10,9 +11,9 @@ def imshow(X, resize=None):
     repo.
     """
     if not resize:
-        resize = X.size
+        resize = X.shape
 
     image = Image.fromarray(np.uint8(X))
     image = image.resize(resize)
-    
+
     return image
